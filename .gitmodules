@@ -1,0 +1,4 @@
+[submodule "nerfies"]
+	path = nerfies
+	url = https://github.com/ShunchiZhang/nerfies.github.io
+	branch = shared-assets
