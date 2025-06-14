@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Dynamic Relation Transformer for Contextual Text Block Detection"
+    />
+    <meta
+      name="keywords"
+      content="Scene Understanding, Visual Relation Modeling, Scene Text Detection"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Dynamic Relation Transformer for Contextual Text Block Detection
+    </title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./nerfies/css/bulma.min.css" />
+    <link rel="stylesheet" href="./nerfies/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="./nerfies/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="./nerfies/css/index.css" />
+    <link rel="icon" href="./favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./nerfies/js/bulma-carousel.min.js"></script>
+    <script src="./nerfies/js/bulma-slider.min.js"></script>
+    <script src="./nerfies/js/index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css"
+    />
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                Dynamic Relation Transformer<br />for Contextual Text Block
+                Detection
+              </h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"
+                  ><a href="http://home.ustc.edu.cn/~wangjiawei/about.html"
+                    >Jiawei Wang</a
+                  ><sup>*13</sup>&ensp;</span
+                >
+                <span class="author-block"
+                  ><a href="https://shunchizhang.github.io">Shunchi Zhang</a
+                  ><sup>*23</sup>&ensp;</span
+                >
+                <span class="author-block"
+                  ><a
+                    href="https://scholar.google.com/citations?user=Gt3I5lgAAAAJ"
+                    >Kai Hu</a
+                  ><sup>*13</sup>&ensp;</span
+                >
+                <br />
+                <span class="author-block"
+                  ><a href="https://dblp.org/pid/95/11495.html">Chixiang Ma</a
+                  ><sup>3</sup>&ensp;</span
+                >
+                <span class="author-block"
+                  ><a href="https://zhongzhuoyao.github.io">Zhuoyao Zhong</a
+                  ><sup>3</sup>&ensp;</span
+                >
+                <span class="author-block"
+                  ><a
+                    href="https://scholar.google.com/citations?user=cUfOZxQAAAAJ"
+                    >Lei Sun</a
+                  ><sup>3</sup>&ensp;</span
+                >
+                <span class="author-block"
+                  ><a
+                    href="https://www.microsoft.com/en-us/research/people/qianghuo/"
+                    >Qiang Huo</a
+                  ><sup>3</sup></span
+                >
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"
+                  ><sup>1</sup> University of Science and Technology of
+                  China&ensp;</span
+                >
+                <br />
+                <span class="author-block"
+                  ><sup>2</sup> Xi'an Jiaotong University&ensp;</span
+                >
+                <br />
+                <span class="author-block"
+                  ><sup>3</sup> Microsoft Research Asia</span
+                >
+                <br />
+                <span class="eql-cntrb"
+                  ><small>* Indicates Equal Contribution </small></span
+                >
+                <br />
+                <span class="author-block" style="color: red"
+                  >ICDAR 2024 Oral</span
+                >
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <span class="link-block">
+                    <a
+                      href="https://link.springer.com/chapter/10.1007/978-3-031-70533-5_19"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <!-- arXiv Link. -->
+                  <span class="link-block">
+                    <a
+                      href="https://arxiv.org/abs/2401.09232"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <!-- Slides Link. -->
+                  <span class="link-block">
+                    <a
+                      href="./icdar2024-oral.pdf"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fab fa-slideshare"></i>
+                      </span>
+                      <span>Slides</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <center>
+            <img src="./images/overall-v2-F5F5F5.jpg" width="70%" />
+            <figcaption style="font-style: normal; color: gray">
+              Fig. 1: Overview of our proposed framework for contextual text
+              block detection.
+            </figcaption>
+          </center>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Contextual Text Block Detection (CTBD) is the task of identifying
+            coherent text blocks within the complexity of natural scenes.
+            Previous methodologies have treated CTBD as either a visual relation
+            extraction challenge within computer vision or as a sequence
+            modeling problem from the perspective of natural language
+            processing. We introduce a new framework that frames CTBD as a graph
+            generation problem. This methodology consists of two essential
+            procedures: identifying individual text units as graph nodes and
+            discerning the sequential reading order relationships among these
+            units as graph edges. Leveraging the cutting-edge capabilities of
+            DQ-DETR for node detection, our framework innovates further by
+            integrating a novel mechanism, a Dynamic Relation Transformer
+            (DRFormer), dedicated to edge generation. DRFormer incorporates a
+            dual interactive transformer decoder that deftly manages a dynamic
+            graph structure refinement process. Through this iterative process,
+            the model systematically enhances the graph's fidelity, ultimately
+            resulting in improved precision in detecting contextual text blocks.
+            Comprehensive experimental evaluations conducted on both
+            SCUT-CTW-Context and ReCTS-Context datasets substantiate that our
+            method achieves state-of-the-art results, underscoring the
+            effectiveness and potential of our graph generation framework in
+            advancing the field of CTBD.
+          </p>
+        </div>
+        <h2 class="title">Method</h2>
+        <figure>
+          <img src="./images/DRFormer_v2.jpg" width="80%" />
+          <figcaption style="font-style: normal; color: gray; text-align: left">
+            Fig. 2: The architecture of our proposed DRFormer, consisting of a
+            dual interactive decoder. For clarity, we only show two attention
+            layers of Transformer decoder and omit the FFN blocks.
+          </figcaption>
+        </figure>
+
+        <!-- <h2 class="title">Experiments</h2> -->
+        <h2 class="title">Main Results</h2>
+        <div style="text-align: center">
+          <figure>
+            <figcaption
+              style="font-style: normal; color: gray; text-align: left"
+            >
+              Table 1: Quantitative performance comparison of DRFormer with
+              state-of-the-art methods on SCUT-CTW-Context dataset.
+              <small
+                >(LA: Local Accuracy; LC: Local Continuity; GA: Global
+                Accuracy)</small
+              >
+            </figcaption>
+            <img src="./images/dataset_ctw.jpg" width="80%" />
+          </figure>
+          <figure>
+            <figcaption
+              style="font-style: normal; color: gray; text-align: left"
+            >
+              Table 2: Quantitative performance comparison of DRFormer with
+              state-of-the-art methods on ReCTS-Context dataset.
+              <small
+                >(LA: Local Accuracy; LC: Local Continuity; GA: Global
+                Accuracy)</small
+              >
+            </figcaption>
+            <img src="./images/dataset_rects.jpg" width="80%" />
+          </figure>
+          <figure>
+            <figcaption
+              style="font-style: normal; color: gray; text-align: left"
+            >
+              Table 3: Quantitative performance comparison of DRFormer with
+              state-of-the-art methods on integral text grouping and ordering
+              task on SCUT-CTW-Context and ReCTS-Context datasets.
+              <small
+                >(LA: Local Accuracy; LC: Local Continuity; GA: Global
+                Accuracy)</small
+              >
+            </figcaption>
+            <img src="./images/gt.jpg" width="59%" />
+          </figure>
+        </div>
+        <h2 class="title">Ablation Study</h2>
+        <div style="text-align: center">
+          <figure>
+            <figcaption
+              style="font-style: normal; color: gray; text-align: left"
+            >
+              Table 4: Ablation studies of various components within DRFormer on
+              SCUT-CTW-Context dataset.
+              <small
+                >(DGSR: Dynamic Graph Structure Refinement; CAF: Cross-Attention
+                First; RASA: Relation-Aware Self-Attention)</small
+              >
+            </figcaption>
+            <img src="./images/ablation.jpg" width="50%" />
+          </figure>
+        </div>
+        <h2 class="title">Qualitative Results</h2>
+        <figure>
+          <img src="./images/qual-baseline.png" width="80%" />
+          <img src="./images/qual-ours.png" width="80%" />
+          <figcaption style="font-style: normal; color: gray; text-align: left">
+            Fig. 3: Qualitative comparison between our proposed baseline (top)
+            and DRFormer (bottom).<br />Black bounding boxes indicate word-level
+            or character-level integral texts, <i>i.e.</i>, graph's nodes, and
+            brown arrows represent the reading order relationships between these
+            integral texts, <i>i.e.</i>, graph's edges, which finally lead to
+            contextual text blocks outlined in green bounding boxes.
+          </figcaption>
+        </figure>
+
+        <h2 class="title">Citation</h2>
+        <pre><code>@inproceedings{wang2024dynamic,
+  title        = {Dynamic Relation Transformer for Contextual Text Block Detection},
+  author       = {Wang, Jiawei and Zhang, Shunchi and Hu, Kai and Ma, Chixiang and Zhong, Zhuoyao and Sun, Lei and Huo, Qiang},
+  booktitle    = {International Conference on Document Analysis and Recognition},
+  year         = {2024},
+  organization = {Springer}
+}</code></pre>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                Page adapted from
+                <a href="https://github.com/nerfies/nerfies.github.io"
+                  ><i class="fab fa-github"></i> nerfies.github.io</a
+                >. License:
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/"
+                  >CC BY-SA 4.0 DEED</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
